@@ -11,7 +11,7 @@ function NewsSection() {
 
   const getNews = async () => {
     const res = await fetch(
-      "http://hn.algolia.com/api/v1/search_by_date?query="
+      "http://hn.algolia.com/api/v1/search_by_date?query=30"
     );
     const data = await res.json();
     console.log(data);
@@ -20,17 +20,19 @@ function NewsSection() {
 
   return (
     <div className="newsSection">
-      {news.map((news) => {
-        return (
-          // Key muss gestzt werden, da jedes Element ein unique ID benötigt
-          // ID wird von der API übernommen
-          <div className="apiWrapper">
-            <h2>{news.author}</h2>
-            <h2>{news.story_title}</h2>
-            <h2>{news.story_url}</h2>
-          </div>
-        );
-      })}
+      {news.length &&
+        news.map((news) => {
+          return (
+            // Key muss gestzt werden, da jedes Element ein unique ID benötigt
+            // ID wird von der API übernommen
+            // className ändern !
+            <div key={news.story_id} className="apiWrapper">
+              <h2>{news.author}</h2>
+              <h2>{news.story_title}</h2>
+              <h2>{news.story_url}</h2>
+            </div>
+          );
+        })}
     </div>
   );
 }

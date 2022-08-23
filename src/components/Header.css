@@ -5,6 +5,7 @@
   font-size: 16pxpx;
   margin-top: 5px;
   height: 24px;
+  border: solid 1px black;
 }
 
 .navHeader > ul {
@@ -12,6 +13,7 @@
   list-style: none;
   padding: 5px;
   margin: 0;
+  border: solid 1px green;
 }
 
 ul > a {
