@@ -27,9 +27,16 @@ function NewsSection() {
             // ID wird von der API übernommen
             // className ändern !
             <div key={news.story_id} className="apiWrapper">
-              <h2>{news.author}</h2>
-              <h2>{news.story_title}</h2>
-              <h2>{news.story_url}</h2>
+              <p className="story">{news.story_title}</p>
+              <p className="storyUrl">{news.story_url}</p>
+              <br />
+              <p className="points">30 points by</p>
+              <p className="author">{news.author}</p>
+              <p className="date">{news.created_at}</p>
+              <a className="hide" href="{#}">
+                hide
+              </a>
+              <p className="comments">{news.num_comments}</p>
             </div>
           );
         })}
