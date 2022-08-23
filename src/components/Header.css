@@ -1,0 +1,46 @@
+.navHeader {
+  background-color: rgb(255, 102, 0);
+  display: flex;
+  align-items: center;
+  font-size: 16pxpx;
+  margin-top: 5px;
+  height: 24px;
+}
+
+.navHeader > ul {
+  display: flex;
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+}
+
+ul > a {
+  text-decoration: none;
+  color: black;
+}
+
+ul > a:active {
+  text-decoration: none;
+  color: white;
+}
+
+.hackerNews {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.navHeader > img {
+  width: 18px;
+  height: auto;
+  border: solid 1px white;
+  margin-left: 2px;
+}
+
+.span {
+  margin: 0 5px;
+}
+
+/*Hier muss noch nachgebessert werden */
+.lastElement {
+  margin-left: 200px;
+}
