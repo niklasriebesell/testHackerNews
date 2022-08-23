@@ -1,8 +1,10 @@
 import "./newsSection.css";
 import { useEffect, useState } from "react";
+import Spinner from "./spinner";
 
 function NewsSection() {
   const [news, setNews] = useState([]);
+  const [isloading, setLoading] = useState(true);
 
   // sorgt dafür, dass bei Aufraufen/refresh der Seite, die funktion getCharacter feuert
   useEffect(() => {
@@ -16,10 +18,12 @@ function NewsSection() {
     const data = await res.json();
     console.log(data);
     setNews(data.hits);
+    setLoading(false);
   };
 
   return (
     <div className="newsSection">
+      {isloading ? <Spinner /> : "Fetch Data"}
       {news.length &&
         news.map((news) => {
           return (
