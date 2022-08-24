@@ -1,6 +1,17 @@
 import "./Footer.css";
+import { useState } from "react";
 
-function Footer() {
+function Footer({ handleInput }) {
+  function checkUserInput(e) {
+    e.preventDefault();
+    if (e.target.value.length >= 3) {
+      handleInput(e.target.value);
+    }
+    // keyCode für Enter is 13
+    // console.log(e.target.value);
+    // console.log(handleInput);
+  }
+
   return (
     <div>
       <footer className="Footer">
@@ -54,7 +65,12 @@ function Footer() {
         <div className="footerNavBottom">
           <form action="#">
             <label htmlFor="">Search: </label>
-            <input type="search" name="" id="" />
+            <input
+              type="search"
+              name="input"
+              id="input"
+              onChange={checkUserInput}
+            />
           </form>
         </div>
       </footer>
