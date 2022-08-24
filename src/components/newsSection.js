@@ -2,14 +2,17 @@ import "./newsSection.css";
 import { useEffect, useState } from "react";
 import Spinner from "./spinner";
 
-function NewsSection() {
+function NewsSection({ userInput }) {
   const [news, setNews] = useState([]);
   const [isloading, setLoading] = useState(true);
+  // const [sideUp, setSideUp] = useState(1);
 
   // sorgt dafür, dass bei Aufraufen/refresh der Seite, die funktion getCharacter feuert
   useEffect(() => {
-    getNews();
-  }, []);
+    if (userInput === "") {
+      getNews();
+    }
+  }, [userInput]);
 
   const getNews = async () => {
     const res = await fetch(
@@ -44,6 +47,7 @@ function NewsSection() {
             </div>
           );
         })}
+      {/* <button onClick={sideUp}>nächste Seite</button> */}
     </div>
   );
 }
