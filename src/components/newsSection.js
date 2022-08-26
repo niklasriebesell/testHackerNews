@@ -57,7 +57,9 @@ function NewsSection({ userInput }) {
           );
         })}
       <button onClick={() => setSideUp(sideUp + 1)}>nächste Seite</button>
-      <button onClick={() => setSideUp(sideUp - 1)}>vorherige Seite</button>
+      <button disabled={sideUp < 1} onClick={() => setSideUp(sideUp - 1)}>
+        vorherige Seite
+      </button>
       <span>Seite: {sideUp}</span>
     </div>
   );
