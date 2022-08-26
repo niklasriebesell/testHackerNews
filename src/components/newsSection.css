@@ -4,10 +4,10 @@
   padding: 0;
 }
 
-.apiWrapper > h2:last-child {
+.newsWrapper > h2:last-child {
   margin-bottom: 0;
 }
-.apiWrapper {
+.newsWrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
