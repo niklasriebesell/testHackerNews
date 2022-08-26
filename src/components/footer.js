@@ -4,8 +4,8 @@ import { useState } from "react";
 function Footer({ handleInput }) {
   function checkUserInput(e) {
     e.preventDefault();
-    if (e.target.value.length >= 3) {
-      handleInput(e.target.value);
+    if (e.target.input.value) {
+      handleInput(e.target.input.value);
     }
     // keyCode für Enter is 13
     // console.log(e.target.value);
@@ -63,13 +63,13 @@ function Footer({ handleInput }) {
           </ul>
         </div>
         <div className="footerNavBottom">
-          <form action="#">
+          <form onSubmit={checkUserInput} method="Post">
             <label htmlFor="">Search: </label>
             <input
               type="search"
               name="input"
               id="input"
-              onChange={checkUserInput}
+              //onChange={checkUserInput}
             />
           </form>
         </div>
