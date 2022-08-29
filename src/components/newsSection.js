@@ -1,4 +1,5 @@
 import "./newsSection.css";
+import "../App.css";
 import { useEffect, useState } from "react";
 import Spinner from "./spinner";
 import axios from "axios";
@@ -37,23 +38,17 @@ function NewsSection({ userInput }) {
       {news.length &&
         news.map((news) => {
           return (
-            // Key muss gestzt werden, da jedes Element ein unique ID benötigt
+            <>
+            {/* // Key muss gestzt werden, da jedes Element ein unique ID benötigt
             // ID wird von der API übernommen
-            // className ändern !
-            <div key={crypto.randomUUID()} className="newsWrapper">
-              <a href={news.story_url}>
-                <p className="story">{news.title}</p>
-              </a>
-              <p className="storyUrl">{news.url}</p>
-
-              <p className="points">{news.points}</p>
-              <p className="author">{news.author}</p>
-              <p className="date">{news.created_at}</p>
-              <a className="hide" href="{#}">
-                hide
-              </a>
-              <p className="comments">{news.num_comments}</p>
-            </div>
+            // className ändern ! */}
+              <div key={crypto.randomUUID()} className="newsWrapper">
+                <a href={news.story_url}>
+                  <p className="story">{news.title}</p>
+                  <p className="infos">{news.points} points by {news.author} {news.created_at} | {news.num_comments} comments</p>
+                </a>
+              </div>
+            </>
           );
         })}
       <button onClick={() => setSideUp(sideUp + 1)}>nächste Seite</button>

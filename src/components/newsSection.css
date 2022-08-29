@@ -1,6 +1,6 @@
 .newsSection {
   background-color: rgb(246, 246, 239);
-  margin: 0;
+  margin-left: 0px;
   padding: 0;
 }
 
@@ -11,37 +11,15 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-left: 10px;
 }
 .story {
   font-size: 14px;
 }
 
-.storyUrl {
+.infos {
   font-size: 10px;
   color: gray;
-}
-
-.points {
-  font-size: 10px;
-  color: gray;
-}
-
-.author {
-  font-size: 10px;
-  color: gray;
-}
-
-.date {
-  font-size: 10px;
-  color: gray;
-}
-
-.hide {
-  font-size: 10px;
-  color: gray;
-}
-
-.comments {
-  font-size: 10px;
-  color: gray;
+  line-height: 1%;
+  
 }
